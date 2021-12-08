@@ -1,0 +1,15 @@
+extends app.pug
+block title 
+    title Atualizar Cliente
+block container
+        h1 Atualizar Cliente
+        form(action=`/clients/${client.id}?_method=PUT`, method="POST")
+            div.mb-3
+                label.form-label(for="name") Nome
+                input#name.form-control(type="text" value=`${client.name}` name="name" placeholder="Digite seu nome" required)
+            div.mb-3
+                label(for="email") E-mail
+                input#email.form-control(type="email" value=`${client.email}` name="email" placeholder="Digite seu e-mail" required)
+            button.btn.btn-primary(type="submit") Atualizar
+        br
+        a(href=`/clients/`).btn.btn-warning  Lista de clientes

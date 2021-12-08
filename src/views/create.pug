@@ -1,0 +1,15 @@
+extends app.pug
+block title 
+    title Cadastrar Novo Cliente
+block container
+        h1 Cadastrar Novo Cliente
+        form(action="/clients/create", method="post")
+            div.mb-3
+                label.form-label(for="name") Nome
+                input#name.form-control(type="text" value="" name="name" placeholder="Digite seu nome" required)
+            div.mb-3
+                label(for="email") E-mail
+                input#email.form-control(type="email" value="" name="email" placeholder="Digite seu e-mail" required)
+            button.btn.btn-primary(type="submit") Cadastrar
+        br
+        a(href=`/clients/`).btn.btn-warning  Lista de clientes
